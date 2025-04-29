@@ -46,7 +46,7 @@ Controls: <br>
 
 - Press ESC to stop and save the CSV.
 
-🧠 Model Architecture <br>
+## 🧠 Model Architecture <br>
 ```
 def HandTranslate(num_classes=3):
     model = Sequential([
@@ -62,7 +62,7 @@ def HandTranslate(num_classes=3):
     return model
 ```
 
-🎥 Real-Time Gesture Translation <br>
+## 🎥 Real-Time Gesture Translation <br>
 Run the translator with:
 ```
 from main import hand_tracking
@@ -75,7 +75,7 @@ Controls: <br>
 
 - Press ESC to save the translated text to translation.txt
 
-🔧 Future Improvements <br>
+## 🔧 Future Improvements <br>
  - Expand dataset for more ASL letters and gestures
 
  - Add dynamic (motion-based) gesture support
