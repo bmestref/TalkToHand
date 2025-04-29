@@ -37,6 +37,49 @@ get_data(
     auto_mode=True,
     limit=<num_of_samples>,
     letter='<letter>',
-    speed=1
+    speed=1 # The bigger the faster
 )
 ```
+Controls: <br>
+
+- Press + to start collecting frames (auto mode). If auto_mode = False, first press the letter you want to record and then + to save it.
+
+- Press ESC to stop and save the CSV.
+
+🧠 Model Architecture <br>
+```
+def HandTranslate(num_classes=3):
+    model = Sequential([
+        Input(shape=(42,)),
+        Reshape((21, 2)),
+        Conv1D(32, 3, padding='same', activation='relu'),
+        MaxPooling1D(2),
+        Conv1D(64, 3, padding='same', activation='relu'),
+        Flatten(),
+        Dense(256, activation='relu'),
+        Dense(num_classes, activation='softmax')
+    ])
+    return model
+```
+
+🎥 Real-Time Gesture Translation <br>
+Run the translator with:
+```
+from main import hand_tracking
+
+hand_tracking(target_dir='<target_folder_to_store_txt')
+```
+Controls: <br>
+
+- Press + to activate prediction mode
+
+- Press ESC to save the translated text to translation.txt
+
+🔧 Future Improvements <br>
+ - Expand dataset for more ASL letters and gestures
+
+ - Add dynamic (motion-based) gesture support
+
+ - Optimize with TensorFlow Lite for mobile or embedded deployment
+
+ - Improve prediction speed and model accuracy
