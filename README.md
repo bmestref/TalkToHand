@@ -14,9 +14,29 @@
 
 ---
 
-## 🚀 Getting Started
-
+## 🚀 Getting Started <br>
+Clone the Repository typing the commands below in your terminal:
 ```bash
-git clone https://github.com/your-username/TalkToHand.git
+git clone https://github.com/bmestref/TalkToHand.git
 cd TalkToHand
+```
+Also, make sure the following dependencies are installed properly:
+```
+pip install opencv-python mediapipe numpy pandas tensorflow
+
+```
+
+## 🎯 Collecting Data <br>
+To collect labeled ASL gesture data:
+```
+from data_collection import get_data
+
+get_data(
+    target_dir='<your/target_folder>',
+    name='<name_file>',
+    auto_mode=True,
+    limit=<num_of_samples>,
+    letter='<letter>',
+    speed=1
+)
 ```
